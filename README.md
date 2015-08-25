@@ -1,4 +1,4 @@
-# Confessions-of-a-TUPian
+# iConfess
 Corsino, Baysantos, Ordoña, Bigay, Caballes, Ramos
 
 Project Description
