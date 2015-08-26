@@ -4,7 +4,7 @@ Corsino, Baysantos, Ordoña, Bigay, Caballes, Ramos
 Project Description
 	
 		The system enables users to share a confession anonymously. 
-	The system limits only for TUP students, regardless of the campus. 
+	The system limits only for college students. 
 	A user can subscribe to another user by following him/her and their 
 	confessions will be seen in the subscriber's home page.
 	
