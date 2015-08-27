@@ -198,3 +198,39 @@ h1{
 .pagination.lighter ul li {
 	 background: #fff; border: 1px solid #ddd;
 }
+
+
+#slide-out{
+	height: 500px;
+}
+
+.ubar{
+	height: 20px;
+	font-size: 20px;
+	background-color: #1976d2;
+}
+
+.fcon{
+	overflow-y: scroll; 
+	height: 80%;
+}
+
+.chatBottom form input[type='submit']{
+	padding: 1px;
+	background: #0066FF;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 20px;
+	height: 30px;
+}
+
+.chatBottom form input[type='text']{
+	width: 50%;
+	padding: 3px;
+	padding-left: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin: 5px;
+	height: 30px;
+}

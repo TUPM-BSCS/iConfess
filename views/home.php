@@ -101,7 +101,7 @@
 		      <div class="collapsible-header">
 		      	<div class="row">
 		      		<div class="col s8">#PartyGirl</div>
-		      		<div class="col s4" style="text-align: right;">@)OoohChinito</div>
+		      		<div class="col s4" style="text-align: right;">@OoohChinito</div>
 		      	</div>
 		      </div>
 		      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>

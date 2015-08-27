@@ -4,16 +4,15 @@
       <div class="col s12 side0 z-depth-1">
       	<div class="row">
            <div class="col s4">
-           		<img src="images/admin.jpg" alt="lol" class="profile">
+           		<img src="images/images.png" alt="lol" class="profile">
            	</div>
            <div class="col s8">
-           		<a href=""><h1 style="color: black;">@theguyinyellow</h1></a>
+           		<a href=""><h1 style="color: black;">@username</h1></a>
            	</div> 
         </div>
         <div class="row bio">
         	<div class="col s12">
-        		19 | ComSci Student | Melancholic | Weird | Stoic | Bipolar | Introvert |
-        		 Saguittarius | Bookworm | Bitch | Yellow?Yellow.
+          		Some Bio Here.
         	</div>
         </div>
       </div>
