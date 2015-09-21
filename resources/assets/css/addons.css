@@ -1,0 +1,27 @@
+.search {
+	padding-top: 50px;
+}
+.lsofinstitution{
+	padding: 0px;
+	height: 300px;
+}
+.lsofinstitution li {
+	list-style: none;
+	padding-top: 30px;
+
+}
+.lsofinstitution img {
+	width: 250px ;
+	height: 250px;
+}
+#padding{
+	padding-top: 20px;
+}
+
+#generate {
+	padding-bottom: 50px;
+}
+.tablelist tr{
+	padding-top: 50px; 
+	padding-right: 50px;
+}
