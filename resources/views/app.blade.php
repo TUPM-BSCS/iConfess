@@ -79,14 +79,20 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/home') }}"><span style="font-size:20px" class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-					<li><a href="{{ url('/confess') }}"><span style="font-size:20px" class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Confess</a></li>
-					<li><a href="{{ url('/chat') }}"><span style="font-size:20px" class="glyphicon glyphicon-comment" aria-hidden="true"></span> Chat</a></li>
-					<li><a href="{{ url('/bookmark') }}"><span style="font-size:20px" class="glyphicon glyphicon-star" aria-hidden="true"></span> Bookmark</a></li>	
-					
 					<li><a href="{{ url('/') }}">
 						<img class="imgs" src="{{ URL::asset('http://localhost/iConfess/resources/assets/image/icon.png') }}" height="40px" weight="50px">
 					</a></li>
+
+					<li>
+					    <div class="col-md-13">
+                            <input type="text" class="form-control"  name="search" placeholder="Search" style="margin-top: 5%;" />
+                        </div>
+					</li>
+
+					<li><a href="{{ url('/home') }}"><span style="font-size:20px" class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+					<li><a href="{{ url('/confess') }}"><span style="font-size:20px" class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Confess</a></li>
+					<li><a href="{{ url('/chat') }}"><span style="font-size:20px" class="glyphicon glyphicon-comment" aria-hidden="true"></span> Chat</a></li>
+					<li><a href="{{ url('/profile') }}"><span style="font-size:20px" class="glyphicon glyphicon-star" aria-hidden="true"></span> My Profile</a></li>	
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

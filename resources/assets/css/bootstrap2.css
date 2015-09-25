@@ -6377,7 +6377,7 @@ button.close {
 }
 
 .imgs{
-  margin-left: 800%;
-  margin-right: 800%;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=bootstrap.css.map */

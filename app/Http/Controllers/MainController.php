@@ -30,12 +30,13 @@ class MainController extends Controller
         return view('pages.chat');
     }
 
-    public function bookmark(){
-        return view('pages.bookmark');
+    public function profile(){
+        return view('pages.profile');
     }
 	
     public function settings(){
-        $user = \App\User::all();
+        $use = \Auth::user()->id;
+        $user = \App\User::where('id','=',$use)->get();
         return view('pages.settings', compact('user'));
     }
 

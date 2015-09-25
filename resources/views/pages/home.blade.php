@@ -45,10 +45,7 @@
 		</ul>
 	</div>
 
-	<div class="col-md-5">
-		
-
-		
+	<div class="col-md-5">	
 		<div class="confessions">
 			@foreach($articles as $article)
 			<div class="confessiondetails">
@@ -56,38 +53,23 @@
 				<?php 
 					$userID = $article->user_id;
 					$userinfo = \App\User::where('id','=',$userID)->get();
-					// $uname = DB::table('users')->select('name')->where('id','=', $article['user_id'])->get();
-				// echo $userinfo;
 				?>
 				@foreach($userinfo as $fuck)
 				<p class="confcodename">by {{ $fuck->name }}</p>
 				@endforeach
+                <p class=" conftags">
+                    <span class="glyphicon glyphicon-tags"></span> SPG, School. LGBT, Beastmode
+                </p>
 				<div class="confcontent">
 					{{ $article->con_body }}
 				</div>
 			</div>
-			<!-- <div class="confessiondetails">
-				<h3>#SampleConfession2</h3>
-				<p class="confcodename">by CodeName</p>
-				<div class="confcontent">
-					Lorem Ipsum ng ina mong wala akong maisip para mapahaba tong kuking ng ama nitong confession na ito. Sana sapat na ito.
-				</div>
-			</div>
-
-			<?php //RONA: yung last confession na napag-usapan natin, lagyan mo ng "lastconfession na tag" ?>
-			<div class="lastconfession">
-				<h3>#SampleConfession3</h3>
-				<p class="confcodename">by CodeName</p>
-				<div class="confcontent">
-					Lorem Ipsum ng ina mong wala akong maisip para mapahaba tong kuking ng ama nitong confession na ito. Sana sapat na ito.
-				</div>
-			</div> -->
 			@endforeach
-			<?php //end ?>
 		</div>
 	</div>
 
 	<div class="popularconf col-md-2 hidden-xs hidden-sm">
+        <h5>Top Confessors</h5>
 		<br>
 		<br>
 		<br>

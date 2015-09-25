@@ -38,7 +38,7 @@
  Route::get('confess', 'MainController@confess');
  Route::post('confess', 'MainController@store');
  Route::get('chat', 'MainController@chat');
- Route::get('bookmark', 'MainController@bookmark');
+ Route::get('profile', 'MainController@profile');
  Route::get('settings', 'MainController@settings');
  Route::get('auth/logout', 'Auth\AuthController@getLogout');
  Route::get('auth/chat', 'MainController@chat');
