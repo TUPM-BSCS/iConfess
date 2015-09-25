@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>iConfess</title>
 
-	  <link rel="stylesheet" href="{{ URL::asset('http://localhost/laravel-master/resources/assets/css/bootstrap2.css') }}"/>
+	  <link rel="stylesheet" href="{{ URL::asset('http://localhost/iConfess/resources/assets/css/bootstrap2.css') }}"/>
          <!-- FONTAWESOME STYLES-->
-         <link rel="stylesheet" href="{{ URL::asset('http://localhost/laravel-master/resources/assets/css/font-awesome.css') }}"/>
-         <link rel="stylesheet" href="{{ URL::asset('http://localhost/laravel-master/resources/assets/font-awesome/css/font-awesome.min.css') }}"/>
+         <link rel="stylesheet" href="{{ URL::asset('http://localhost/iConfess/resources/assets/css/font-awesome.css') }}"/>
+         <link rel="stylesheet" href="{{ URL::asset('http://localhost/iConfess/resources/assets/font-awesome/css/font-awesome.min.css') }}"/>
             <!-- CUSTOM STYLES-->
-        <link rel="stylesheet" href="{{ URL::asset('http://localhost/laravel-master/resources/assets/css/custom.css') }}"/>
-        <link rel="stylesheet" href="{{ URL::asset('http://localhost/laraveltry/resources/assets/css/custom-made.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::asset('http://localhost/iConfess/resources/assets/css/custom.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::asset('http://localhost/iConfess/resources/assets/css/custom-made.css') }}"/>
         <!-- Custom Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -19,6 +19,7 @@
 
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
         <!-- include the BotDetect layout stylesheet -->
   @if (class_exists('CaptchaUrls'))
     <link href="{{ CaptchaUrls::LayoutStylesheetUrl() }}" type="text/css" 
@@ -42,7 +43,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">
-					<img src="{{ URL::asset('http://localhost/laravel-master/resources/assets/image/icon.png') }}" height="50px" weight="50px"></a></li>
+					<img src="{{ URL::asset('http://localhost/iConfess/resources/assets/image/icon.png') }}" height="50px" weight="50px"></a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -78,12 +79,14 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#"><span style="font-size:30px" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-					<li><a href="#"><span style="font-size:30px" class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></li>
-					<li><a href="{{ url('/home') }}"><span style="font-size:30px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
-					<li><a href="#"><span style="font-size:30px" class="glyphicon glyphicon-book" aria-hidden="true"></span></a></li>	
+					<li><a href="{{ url('/home') }}"><span style="font-size:20px" class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+					<li><a href="{{ url('/confess') }}"><span style="font-size:20px" class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Confess</a></li>
+					<li><a href="{{ url('/chat') }}"><span style="font-size:20px" class="glyphicon glyphicon-comment" aria-hidden="true"></span> Chat</a></li>
+					<li><a href="{{ url('/bookmark') }}"><span style="font-size:20px" class="glyphicon glyphicon-star" aria-hidden="true"></span> Bookmark</a></li>	
+					
 					<li><a href="{{ url('/') }}">
-					<img class="imgs" src="{{ URL::asset('http://localhost/laravel-master/resources/assets/image/icon.png') }}" height="40px" weight="50px"></a></li>
+						<img class="imgs" src="{{ URL::asset('http://localhost/iConfess/resources/assets/image/icon.png') }}" height="40px" weight="50px">
+					</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -91,6 +94,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }}<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('/settings') }}">Settings</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
@@ -98,6 +102,14 @@
 			</div> 
 		</div> 
 	</nav>		
+
+	<div class="container">
+		 @if(Session::has('flash_message'))
+ 			<div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+ 		 @endif
+	</div>
+
+
 @yield('content')				
 
 @endif

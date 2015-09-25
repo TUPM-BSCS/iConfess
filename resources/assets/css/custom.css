@@ -14,7 +14,7 @@
     =============================================*/
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #000;
+    background-color: #fbe5e5;
 }
 
  #wrapper {
@@ -545,5 +545,112 @@ ul{
 
 .navbar-custom {
     font-color: #000;
-    background-color: #4a6e99;
+    background-color: #fff;
 }
+
+
+/* home css start*/
+.homecont
+{
+
+}
+
+
+    /*side profile*/
+.sideprofile
+{
+    border: 1px #b2b2b2 solid;
+    border-radius: 5px;
+    margin: 0% 1% 0% 5%;
+    color: #7c7c7c;
+    padding: 0px;
+    font-size: 1.05vw;
+}
+
+
+.sideprofile ul li
+{
+    float: left;
+    padding: 0px 15px;
+}
+.sideprofile ul
+{
+    list-style-type: none;
+    float: left;
+    padding: 0px;
+    
+}
+
+.sideprofile-stats
+{
+    color: #7c7c7c;
+}
+
+.sideprofile ul li a:hover
+{
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+    /*Confessions div*/
+.confessions
+{
+    border: 1px #b2b2b2 solid;
+    max-height: 5%;
+    padding: 0px;
+}
+
+.confcodename
+{
+    padding: 0px 0px 10px 0px;
+    margin: 0px;
+    margin: 0%  0% 0% 4%;
+    color: #9f9f9f;
+}
+
+.confcontent
+{
+    display: none;
+    padding: 0px;
+    padding-left: 20px;
+}
+
+.confessiondetails
+{
+    border-bottom: 1px #b2b2b2 solid; 
+}
+
+.confessiondetails:hover,.lastconfession:hover
+{
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+
+.confessiondetails h3,.lastconfession h3
+{
+    margin: 0%  0% 0% 4%;
+    color: black;
+    padding-top: 10px;
+}
+
+.popularconf
+{
+    border: 1px #b2b2b2 solid;
+    border-radius: 5px;
+    margin: 0% 5% 0% 1%;
+}
+/* home css end*/
+
+/*create confession css start*/
+.createconf
+{
+    border: 1px #b2b2b2 solid;
+    border-radius: 5px;
+    color: #7c7c7c;
+    padding: 0px;
+    font-size: 1.05vw;
+    padding: 10px;
+}
+/*create confession css end*/

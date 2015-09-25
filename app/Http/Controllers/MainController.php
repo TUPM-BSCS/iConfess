@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use App\Http\Requests;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
+use DB;
+use Illuminate\Database\Query\Builder;
 
 class MainController extends Controller
 {
@@ -15,10 +18,34 @@ class MainController extends Controller
     }
 
 	public function home(){
-		return view('pages.home');
+        $articles = \App\Confession::latest('con_published')->published()->get();
+		return view('pages.home', compact('articles'));
+    }
+
+    public function confess(){
+        return view('pages.confess');
+    }
+
+    public function chat(){
+        return view('pages.chat');
+    }
+
+    public function bookmark(){
+        return view('pages.bookmark');
     }
 	
-     
+    public function settings(){
+        $user = \App\User::all();
+        return view('pages.settings', compact('user'));
+    }
+
+    public function store(){
+        $article = new \App\Confession(Request::all());
+        \Auth::user()->articles()->save($article);
+        \Session::flash('flash_message', 'Your confession has been created!');
+        return redirect('confess');
+        
+    }
 
     // public function contact()
     // {
