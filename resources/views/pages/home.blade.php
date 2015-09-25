@@ -46,25 +46,11 @@
 	</div>
 
 	<div class="col-md-5">
-		<?php //insert retrieve codes for tags and put all in a dropdown menu ?>
-		<div class="dropdown">
-		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		    Select Tag:
-		    <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-		    <li><a href="#">Sparks</a></li>
-		    <li><a href="#">LGBT</a></li>
-		    <li><a href="#">SPG</a></li>
-		    <li><a href="#">Friends</a></li>
-		  </ul>
-		</div>
+		
 
-
-		<?php //insert loop here to retrieve confessions: start ?>
-
-		@foreach($articles as $article)
+		
 		<div class="confessions">
+			@foreach($articles as $article)
 			<div class="confessiondetails">
 				<h3>{{ $article->con_title }}</h3>
 				<?php 

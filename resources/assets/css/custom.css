@@ -42,12 +42,7 @@ body {
 .no-boder {
     border:1px solid #f3f3f3;
 }
-h2 {
-    color: #f00;
-}
-h4 {
-    padding-top:10px;
-}
+
 .square-btn-adjust {
     border: 0px solid transparent; 
    -webkit-border-radius: 0px;
@@ -378,9 +373,6 @@ line-height: 1.428571429;
    
 }
 
-body{
-    overflow-y: hidden;
-}
 .brand-logo{
     margin-left:20px;
 }
@@ -493,7 +485,7 @@ body{
     background-color: #1976d2;
     border-top-left-radius:0.25em;
     border-top-right-radius:0.25em;
-    border-bottom-right-radius:0em;
+    border-bottom-right-radius:0e
     border-bottom-left-radius:0em;
 }
 
@@ -600,6 +592,7 @@ ul{
     border: 1px #b2b2b2 solid;
     max-height: 5%;
     padding: 0px;
+    border-radius: 5px;
 }
 
 .confcodename
@@ -654,3 +647,81 @@ ul{
     padding: 10px;
 }
 /*create confession css end*/
+
+/* Settings css start */
+.settingsdiv
+{
+    border: 1px #b2b2b2 solid;
+    max-height: 5%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0px auto;
+}
+
+.settingsdivwrap
+{
+    width: 100%;
+    margin: 0px auto;
+    padding-top: 1%;
+}
+
+.settingsfield
+{
+    border-top: 1px #c2c2c2 solid;
+    padding: 1% 0% 1% 1%;
+}
+
+.settings-editbtn-cn
+{
+    text-align: center;
+}
+
+.settings-editbtn-cn:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.settings-editbtn-pw
+{
+    text-align: center;
+}
+
+.settings-editbtn-pw:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.codenamediv
+{
+    padding: 1% 0% 1% 10%;
+    background-color: #e8e8e8;
+    display: none;
+}
+
+.passworddiv
+{
+    padding: 1% 0% 1% 10%;
+    background-color: #e8e8e8;
+    display: none;
+}
+/* Settings css end */
+
+.btn-primary
+{
+    border: 1px #5F9EA0 solid;
+    border-radius: 5px;
+    background-color: #5F9EA0;
+    color: white;
+    height: 10%;
+}
+
+
+.btn-primary:hover
+{
+    border: 1px #5F9EA0 solid;
+    background-color: white;
+    color: #5F9EA0;
+    transition: all 0.3s;
+}
