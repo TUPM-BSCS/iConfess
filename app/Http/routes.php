@@ -29,7 +29,8 @@
 
 
 // Registration routes...
- Route::get('/', 'Auth\AuthController@getLogin');
+
+ Route::get('/', 'Auth\AuthController@getRegister');
  Route::get('auth/register', 'Auth\AuthController@getRegister');
  Route::post('auth/register', 'Auth\AuthController@postRegister');
  Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -40,6 +41,7 @@
  Route::get('chat', 'MainController@chat');
  Route::get('profile', 'MainController@profile');
  Route::get('settings', 'MainController@settings');
+ Route::post('settings/changename', 'MainController@changename');
+ Route::post('settings/upload', 'MainController@upload');
  Route::get('auth/logout', 'Auth\AuthController@getLogout');
- Route::get('auth/chat', 'MainController@chat');
  

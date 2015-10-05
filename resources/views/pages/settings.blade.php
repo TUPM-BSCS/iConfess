@@ -38,16 +38,26 @@
 		<div class="settingsdiv">
 			<div class="settingsdivwrap">
 				<div class="changedp">
-					<form>
-						<img src="" alt="D.P.">
-						<button class="btn btn-primary btn-sm"> Save New Profile Picture</button>
+					<form method="POST" action="{{ url('/settings/upload') }}" enctype="multipart/form-data" file="true">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						@foreach($user as $posts)
+						<img src="{{ asset($posts->user_image) }}" alt="D.P." height="250px" width="200px">
+						<div class="form-group">
+                            <label class="col-md-4 control-label">Change Profile Picture</label>
+                            <div class="col-md-6">
+                                <input type="file" name="user_image">
+                            </div>
+                        </div>  
+                        @endforeach
+                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
 					</form>
 				</div>
 
 				<br>
 
 				<div class="settingsfield">
-					<form>
+					<form method="POST" action="{{ url('/settings/changename') }}">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<table width="100%">
 
 							<tr>
@@ -56,7 +66,8 @@
 								</td>
 								<td style="color: gray; text-align: center;" width="75%">
 									<!-- insert retrieve name here-->
-									Rushty Ben Vergara Baysantos
+									@foreach($user as $me)
+									{{ $me->name }}
 								</td>
 								<td class="settings-editbtn-cn">
 									<a class="settings-editbtn-cn">
@@ -74,18 +85,19 @@
 										New Codename:
 									</th>
 									<th>
-										<input type="text">
+										<input type="text" name="name" value="{{ old('name') }}">
 									</th>
 								</thead>
 							</table>
-							<input class="btn btn-primary btn-sm" type="submit" name="savenewcodename">
+							<!-- <input class="btn btn-primary btn-sm" type="submit"> -->
+							<button type="submit" class="btn btn-primary btn-sm">Submit</button>
 							<button class="btn btn-default btn-sm cancelcodename" type="button">Cancel</button>
 						</div>
 					</form>
 				</div>
 				
 				<div class="settingsfield">
-					<form>
+					<form method="POST" action="{{ url('/settings') }}">
 						<table width="100%">
 							<tr>
 								<td width="15%">
@@ -93,7 +105,8 @@
 								</td>
 								<td style="color: gray; text-align: center;" width="75%">
 									<!-- insert retrieve name here-->
-									You updated your password about a week ago, week ago
+									You update your account last: {{ $me->created_at }}
+									@endforeach
 								</td>
 								<td class="settings-editbtn-pw">
 									<a class="settings-editbtn-pw">

@@ -23,9 +23,9 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">E-Mail Address</label>
+                            <label class="col-md-4 control-label">Codename</label>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" placeholder="someone@example.com" value="{{ old('email') }}" required/>
+                                <input type="text" class="form-control" name="name" placeholder="supercute" required/>
                             </div>
                         </div>
 

@@ -12,7 +12,7 @@
                             <strong>Oops!</strong> There were some problems with your input.<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
+                                    <h5>{{ $error }}</h5>
                                 @endforeach
                             </ul>
                         </div>
@@ -22,7 +22,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Username</label>
+                            <label class="col-md-4 control-label">Codename</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="name" placeholder="supercute0217" value="{{ old('name') }}" required/>
                             </div>
@@ -34,6 +34,13 @@
                                 <input type="email" class="form-control" name="email" placeholder="someone@example.com" value="{{ old('email') }}" required/>
                             </div>
                         </div>
+
+                        <!-- <div class="form-group">
+                            <label class="col-md-4 control-label">Profile Picture</label>
+                            <div class="col-md-6">
+                                <input type="file" name="user_image">
+                            </div>
+                        </div>         -->                
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Password</label>

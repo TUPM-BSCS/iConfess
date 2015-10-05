@@ -21,6 +21,13 @@
 <div class="homecont container-fluid">
 
 	<div class="sideprofile col-md-3 hidden-xs hidden-sm">
+
+		<div class="popularconf col-md-2 hidden-xs hidden-sm">
+	        @foreach($user as $posts)
+				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="250px" width="250px">
+			@endforeach
+		</div>
+		<div>
 		<ul>
 			<li style="padding-left: 10px">
 				<a>
@@ -41,14 +48,22 @@
 				</a>
 			</li>
 		</ul>
+		</div>
 	</div>
 
 	<div class="col-md-8 ">
 		<div class="confessions">
-			
+			@foreach($conf as $con)
 			<div class="confessiondetails">
-				<h6>Profile Page is under construction. All your details will be uploaded here soon. </h6>
+				<h3>{{ $con->con_title }}</h3>
+				<p class=" conftags">
+                    <span class="glyphicon glyphicon-tags"></span> SPG, School. LGBT, Beastmode
+                </p>
+				<div class="confcontent">
+					{{ $con->con_body }}
+				</div>
 			</div>
+			@endforeach
 			
 		</div>
 				

@@ -47,8 +47,14 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
+						<div class="col-md-6 col-md-offset-4">
+                                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                                <a href="{{ url('/auth/login') }}"><button type="submit" class="btn btn-primary">
+                                    Log in
+                                </button></a>
+                        </div>
 						<!-- <button type="submit" class="btn btn-primary">-->
-						<li><a href="{{ url('/auth/login') }}"><font size="20px"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></font></a></li>
+						<!-- <li><a href="{{ url('/auth/login') }}"><font size='3px'>Sign in</font></a></li> -->
 						<!-- <li><a href="{{ url('/auth/login') }}"><i class="glyphicon glyphicon-log-in" width="10%"></i>Log in</a></li>
 						 --><!--
 						<li><a href="{{ url('/auth/register') }}"><font color="#fff">Register</font></a></li> -->
@@ -60,8 +66,10 @@
 	<nav>
 		<div class="panel panel-defaults">
 			<h1 padding-left="100px">Welcome to iConfess!</h1>
+
 		</div>
 	</nav>
+
 @yield('guest')
 
 
@@ -91,7 +99,7 @@
 
 					<li><a href="{{ url('/home') }}"><span style="font-size:20px" class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 					<li><a href="{{ url('/confess') }}"><span style="font-size:20px" class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Confess</a></li>
-					<li><a href="{{ url('/chat') }}"><span style="font-size:20px" class="glyphicon glyphicon-comment" aria-hidden="true"></span> Chat</a></li>
+					<!-- <li><a href="{{ url('/chat') }}"><span style="font-size:20px" class="glyphicon glyphicon-comment" aria-hidden="true"></span> Chat</a></li> -->
 					<li><a href="{{ url('/profile') }}"><span style="font-size:20px" class="glyphicon glyphicon-star" aria-hidden="true"></span> My Profile</a></li>	
 				</ul>
 
@@ -112,6 +120,12 @@
 	<div class="container">
 		 @if(Session::has('flash_message'))
  			<div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+ 		 @endif
+	</div>
+
+	<div class="container">
+		 @if(Session::has('error_message'))
+ 			<div class="alert alert-danger">{{ Session::get('error_message') }}</div>
  		 @endif
 	</div>
 

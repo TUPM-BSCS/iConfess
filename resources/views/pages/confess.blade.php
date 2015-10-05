@@ -6,6 +6,12 @@
 
 <div class="container-fluid">
 	<div class="sideprofile col-md-3 hidden-xs hidden-sm">
+		<div class="popularconf col-md-2 hidden-xs hidden-sm">
+	        @foreach($user as $posts)
+				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="250px" width="250px">
+			@endforeach
+		</div>
+		
 		<ul>
 			<li style="padding-left: 10px">
 				<a>
@@ -51,12 +57,12 @@
 		    </ul> -->
 		  </div>
 		  <div class="col-md-12">
-		  	<input class="form-control" type="text" name="con_tags">
+		  	<input class="form-control" type="text" name="con_tags" required/>
 		  </div>
 	</div>
 
 	<div class="form-group">
-	  <textarea name="con_body"class="form-control" rows="13" id="myconfession" style="width: 97%; margin: auto;"></textarea>
+	  <textarea name="con_body"class="form-control" rows="13" id="myconfession" style="width: 97%; margin: auto;" required/></textarea>
 	</div>
 
 	<div class="form-group">
