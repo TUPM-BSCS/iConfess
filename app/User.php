@@ -43,16 +43,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     public function post(){
-         // $use = \Auth::user()->id;
-         // $user = \App\User::where('id','=',$use)->get();
-        // $use = \Auth::user()->id;
-        // $post = new \App\User(Request::all());
-        // $extension = Input::file('user_image')->getClientOriginalExtension();
-        // $filename = sha1(time()) . '.' . $extension;
-        // Input::file('user_image')->move(public_path().'\uploads\posts', $filename);
-        // $post->user_image = $filename;
-        // $post->save(['id']);
-        // return redirect('settings');
+
 
         $file = array('users' => Request::all());
       // setting up rules
@@ -82,5 +73,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         }
       }
     }
+
+    public function friends()
+    {
+      return $this->belongsToMany('App\User', 'followers', 'user_id', 'follow_id');
+    }
+
+    public function addFriend(User $user)
+    {
+      $this->friends()->attach($user->id);
+    }
+
+    public function removeFriend(User $user)
+    {
+      $this->friends()->detach($user->id);
+    }
+
 }
+
 

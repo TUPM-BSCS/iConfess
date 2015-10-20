@@ -8,7 +8,7 @@
 	<div class="sideprofile col-md-3 hidden-xs hidden-sm">
 		<div class="popularconf col-md-2 hidden-xs hidden-sm">
 	        @foreach($user as $posts)
-				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="250px" width="250px">
+				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="150px" width="150px">
 			@endforeach
 		</div>
 		

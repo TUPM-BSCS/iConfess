@@ -36,6 +36,11 @@
  Route::get('auth/login', 'Auth\AuthController@getLogin');
  Route::post('auth/login', 'Auth\AuthController@postLogin');
  Route::get('home', 'MainController@home');
+ // Route::get('home', 'MainController@counter');
+ Route::post('results', 'MainController@postSearch');
+ Route::get('search', 'MainController@getIndex');
+ Route::post('search/addFriend', 'MainController@getAddFriend');
+ Route::post('search/removeFriend', 'MainController@getRemoveFriend');
  Route::get('confess', 'MainController@confess');
  Route::post('confess', 'MainController@store');
  Route::get('chat', 'MainController@chat');
@@ -43,5 +48,7 @@
  Route::get('settings', 'MainController@settings');
  Route::post('settings/changename', 'MainController@changename');
  Route::post('settings/upload', 'MainController@upload');
+ Route::get('resetpassword', 'MainController@editpass');
+ Route::post('resetpasswordcomplete', 'MainController@updatepass');
  Route::get('auth/logout', 'Auth\AuthController@getLogout');
  

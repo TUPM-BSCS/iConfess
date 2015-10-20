@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 use Validator;
 use Input;
 use Illuminate\Database\Query\Builder;
+use DB;
+use Sentinel;
+use Hash;
 
 class MainController extends Controller
 {
@@ -22,7 +25,8 @@ class MainController extends Controller
         $use = \Auth::user()->id;
         $user = \App\User::where('id','=',$use)->get();
         $articles = \App\Confession::latest('con_published')->published()->get();
-		return view('pages.home', compact('user','articles'));
+        $count = \App\Confession::where('user_id','=', $use)->count();
+		    return view('pages.home', compact('user','articles', 'count'));
     }
 
     public function confess(){
@@ -53,7 +57,6 @@ class MainController extends Controller
         \Auth::user()->articles()->save($article);
         \Session::flash('flash_message', 'Your confession has been created!');
         return redirect('confess');
-        
     }
 
     public function changename(){
@@ -102,5 +105,74 @@ class MainController extends Controller
       }
     }
 
+     public function postSearch() {
+            $search = '%'.Input::get('search').'%';
+
+            $pages      = DB::table('users')
+                            ->select('users.name')
+                            ->where('name', 'LIKE', $search);
+
+            // $blogitems  = DB::table('confessions')
+            //                 ->select('confessions.con_id', 'confessions.con_title', 'confessions.con_tags', 'confessions.con_body')
+            //                 ->where('con_title', 'LIKE', $search)
+            //                 ->orWhere('con_tags', 'LIKE', $search)
+            //                 ->orWhere('con_body', 'LIKE', $search);
+
+            $results = $pages->get();
+
+
+            return view('pages.sresult')->with('results', $results);
+    }
+
+        public function getIndex()
+        {
+        $not_friends = \App\User::where('id', '!=', \Auth::user()->id);
+
+        if (\Auth::user()->friends->count()) {
+          $not_friends->whereNotIn('id', \Auth::user()->friends->modelKeys());
+        }
+          $not_friends = $not_friends->get();
+          
+        return view('pages.search')->with('not_friends', $not_friends);
+      }
+
+      public function getAddFriend()
+      {
+        $id = Request::get('id');
+      $user = \App\User::find($id);
+      \Auth::user()->addFriend($user);
+      return redirect('search');
+      }
+
+      public function getRemoveFriend()
+      {
+      $id = Request::get('id');
+      $user = \App\User::find($id);
+      \Auth::user()->removeFriend($user);
+      return redirect('search');
+      }
+
+      public function updatepass() {
+          // $hasher = Sentinel::getHasher();
+          $use = \Auth::user()->id;
+          // $user = \App\User::where('id','=',$use)->get();
+          $oldPassword = Input::get('old_password');
+          $password = Input::get('password');
+          $passwordConf = Input::get('password_confirmation');
+          $crypt = Hash::make($passwordConf);
+
+          // $user = Sentinel::getUser();
+
+          // if (!$hasher->check($oldPassword, $user->password) || $password != $passwordConf) {
+          //     Session::flash('error', 'Check input is correct.');
+          //     // return view('passwords/reset');
+          // }
+
+        \App\User::where('id', $use)->update(array('password'=>$crypt));
+         \Session::flash('flash_message', 'You have successfully updated your password!');
+          return redirect('settings');
+      }
+
 }
+
 ?>

@@ -91,11 +91,11 @@
 						<img class="imgs" src="{{ URL::asset('http://localhost/iConfess/resources/assets/image/icon.png') }}" height="40px" weight="50px">
 					</a></li>
 
-					<li>
+					<!-- <li>
 					    <div class="col-md-13">
                             <input type="text" class="form-control"  name="search" placeholder="Search" style="margin-top: 5%;" />
                         </div>
-					</li>
+					</li> -->
 
 					<li><a href="{{ url('/home') }}"><span style="font-size:20px" class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 					<li><a href="{{ url('/confess') }}"><span style="font-size:20px" class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Confess</a></li>
@@ -128,6 +128,13 @@
  			<div class="alert alert-danger">{{ Session::get('error_message') }}</div>
  		 @endif
 	</div>
+
+	<form class="form-horizontal" role="form" method="get" action="{{ url('/search') }}">
+	<input type="hidden" name="_token" value="{{ csrf_token() }}">
+		<div>
+			<button type="submit" class="btn btn-primary btn-sm">See All</button>
+		</div>
+	</form>
 
 
 @yield('content')				

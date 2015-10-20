@@ -97,7 +97,8 @@
 				</div>
 				
 				<div class="settingsfield">
-					<form method="POST" action="{{ url('/settings') }}">
+					<form method="POST" action="{{ url('/resetpasswordcomplete') }}">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<table width="100%">
 							<tr>
 								<td width="15%">
@@ -126,7 +127,7 @@
 										Old Password:
 									</th>
 									<th>
-										<input type="text">
+										<input type="text" name="old_password">
 									</th>
 								</thead>
 								<thead>
@@ -134,7 +135,7 @@
 										New Password:
 									</th>
 									<th>
-										<input type="text">
+										<input type="text" name="password">
 									</th>
 								</thead>
 								<thead>
@@ -142,7 +143,7 @@
 										Confirm New Password:
 									</th>
 									<th>
-										<input type="text">
+										<input type="text" name="password_confirmation">
 									</th>
 								</thead>
 							</table>

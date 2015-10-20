@@ -20,12 +20,23 @@
 	</script>
 </head>
 <body>
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/results') }}">
+	  	<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	  	<div class="col-md-12">
+        <input type="text" class="form-control"  name="search" placeholder="Search"/>
+        </div>
+		<div>
+			<button type="submit" class="btn btn-primary btn-sm">S</button>
+		</div>
+	</form>
+
+
 <div class="homecont container-fluid">
 
 	<div class="sideprofile col-md-3 hidden-xs hidden-sm">
 		<div class="popularconf col-md-2 hidden-xs hidden-sm">
 	        @foreach($user as $posts)
-				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="250px" width="250px">
+				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="150px" width="150px">
 			@endforeach
 		</div>
 		
@@ -33,7 +44,7 @@
 			<li style="padding-left: 10px">
 				<a>
 					<span class="sideprofile-stats">Confessions</span><br>
-					<span><b>1</b></span>
+					<span><b><?php echo $count ?></span>
 				</a>
 			</li>
 			<li>
@@ -83,8 +94,4 @@
 </div>
 
 
-<!-- bookmarks na lang prob natin. HOORAYS-->
-
-
 @endsection
-
