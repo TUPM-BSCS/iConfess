@@ -20,46 +20,12 @@
 	</script>
 </head>
 <body>
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/results') }}">
-	  	<input type="hidden" name="_token" value="{{ csrf_token() }}">
-	  	<div class="col-md-12">
-        <input type="text" class="form-control"  name="search" placeholder="Search"/>
-        </div>
-		<div>
-			<button type="submit" class="btn btn-primary btn-sm">S</button>
-		</div>
-	</form>
 
 
 <div class="homecont container-fluid">
 
 	<div class="sideprofile col-md-3 hidden-xs hidden-sm">
-		<div class="popularconf col-md-2 hidden-xs hidden-sm">
-	        @foreach($user as $posts)
-				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="150px" width="150px">
-			@endforeach
-		</div>
-		
-		<ul>
-			<li style="padding-left: 10px">
-				<a>
-					<span class="sideprofile-stats">Confessions</span><br>
-					<span><b><?php echo $count ?></span>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span class="sideprofile-stats">Following</span><br>
-					<span ><b>1</b></span>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span class="sideprofile-stats">Followers</span><br>
-					<span><b>1</b></span>
-				</a>
-			</li>
-		</ul>
+		@include('pages/sideprofile')
 	</div>
 
 	<div class="col-md-5">	
@@ -75,9 +41,9 @@
 				<p class="confcodename">by {{ $fuck->name }}</p>
 				@endforeach
                 <p class=" conftags">
-                    <span class="glyphicon glyphicon-tags"></span> SPG, School. LGBT, Beastmode
+                    <span class="glyphicon glyphicon-tags"></span> {{ $article->con_tags}}
                 </p>
-				<div class="confcontent">
+				<div class="confcontent" >
 					{{ $article->con_body }}
 				</div>
 			</div>
@@ -86,10 +52,7 @@
 	</div>
 
 	<div class="popularconf col-md-2 hidden-xs hidden-sm">
-        <h5>Top Confessors</h5>
-		<br>
-		<br>
-		<br>
+        @include('pages/popularconf')
 	</div>
 </div>
 

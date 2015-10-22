@@ -1,37 +1,25 @@
 @extends('app')
 
 @section('content')
-
+<head>
+	<script type="text/javascript">
+		function onload()
+			{
+			  var today = new Date();
+			  var dd = today.getDate();
+			  var mm = today.getMonth()+1; 
+			  var yyyy = today.getFullYear();
+			  yyyy = parseInt(yyyy) + 1;
+			  today = dd+'/'+mm+'/'+yyyy;
+			  document.getElementById("publish_date").value = today;
+			}
+	</script>
+</head>
 <body>
 
 <div class="container-fluid">
 	<div class="sideprofile col-md-3 hidden-xs hidden-sm">
-		<div class="popularconf col-md-2 hidden-xs hidden-sm">
-	        @foreach($user as $posts)
-				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="150px" width="150px">
-			@endforeach
-		</div>
-		
-		<ul>
-			<li style="padding-left: 10px">
-				<a>
-					<span class="sideprofile-stats">Confessions</span><br>
-					<span><b>1</b></span>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span class="sideprofile-stats">Following</span><br>
-					<span ><b>1</b></span>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span class="sideprofile-stats">Followers</span><br>
-					<span><b>1</b></span>
-				</a>
-			</li>
-		</ul>
+		@include('pages/sideprofile')
 	</div>
 
 
@@ -55,6 +43,8 @@
 		      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Heartaches</a></li>
 		      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Professor</a></li>
 		    </ul> -->
+		   <!--  <input type="select" multiple="multiple" "Hello" name="tags" class="form-control"> -->
+		   
 		  </div>
 		  <div class="col-md-12">
 		  	<input class="form-control" type="text" name="con_tags" required/>
@@ -66,9 +56,9 @@
 	</div>
 
 	<div class="form-group">
-        <label class="col-md-2 control-label">Publish On</label>
+        <label class="col-md-2 control-label" style="font-size: 14px;">Publish On</label>
         <div class="col-md-10">
-            <input type="date" class="form-control" name="con_published" required/>
+            <input type="date" id="publish_date" class="form-control" name="con_published" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>" required/>
         </div>
     </div>
 

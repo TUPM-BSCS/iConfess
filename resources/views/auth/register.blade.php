@@ -62,6 +62,12 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-6 col-md-offset-4">
+                                <a class="btn btn-link" href="{{ url('/auth/login') }}">I already have an account!</a>
                             </div>
                         </div>
                     </form>

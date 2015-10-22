@@ -20,44 +20,17 @@
 <body>
 <div class="homecont container-fluid">
 
-	<div class="sideprofile col-md-3 hidden-xs hidden-sm">
-
-		<div class="popularconf col-md-2 hidden-xs hidden-sm">
-	        @foreach($user as $posts)
-				<img src="{{ asset($posts->user_image) }}" alt="D.P." height="150px" width="150px">
-			@endforeach
-		</div>
-		<div>
-		<ul>
-			<li style="padding-left: 10px">
-				<a>
-					<span class="sideprofile-stats">Confessions</span><br>
-					<span><b>1</b></span>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span class="sideprofile-stats">Following</span><br>
-					<span ><b>1</b></span>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span class="sideprofile-stats">Followers</span><br>
-					<span><b>1</b></span>
-				</a>
-			</li>
-		</ul>
-		</div>
+	<div class="sideprofile col-md-3 col-xs-11 col-sm-11">
+		@include('pages/sideprofile')
 	</div>
 
-	<div class="col-md-8 ">
+	<div class="col-md-8 col-xs-11 col-sm-11">
 		<div class="confessions">
 			@foreach($conf as $con)
 			<div class="confessiondetails">
 				<h3>{{ $con->con_title }}</h3>
 				<p class=" conftags">
-                    <span class="glyphicon glyphicon-tags"></span> SPG, School. LGBT, Beastmode
+                    <span class="glyphicon glyphicon-tags"></span> {{ $con->con_tags }}
                 </p>
 				<div class="confcontent">
 					{{ $con->con_body }}

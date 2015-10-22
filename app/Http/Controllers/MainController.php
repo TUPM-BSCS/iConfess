@@ -21,7 +21,7 @@ class MainController extends Controller
         return view('auth.register');
     }
 
-	public function home(){
+	   public function home(){
         $use = \Auth::user()->id;
         $user = \App\User::where('id','=',$use)->get();
         $articles = \App\Confession::latest('con_published')->published()->get();
@@ -29,6 +29,15 @@ class MainController extends Controller
 		    return view('pages.home', compact('user','articles', 'count'));
     }
 
+    public function sideprof(){
+         $use = \Auth::user()->id;
+         $count = \App\Confession::where('user_id','=', $use)->count();
+         return view('pages.sideprof', compact('count'));
+    }
+
+    public function topconfess(){
+
+    }
     public function confess(){
         $use = \Auth::user()->id;
         $user = \App\User::where('id','=',$use)->get();
@@ -75,7 +84,7 @@ class MainController extends Controller
       $post = new \App\User();
         // $file = array('users' => Request::all());
       // setting up rules
-      $rules = array('users' => 'required|mimes:jpeg,jpg,png|max:200px'); //mimes:jpeg,bmp,png and for max size max:10000
+      $rules = array('users' => 'required|mimes:jpeg,jpg,png|max:2000px'); //mimes:jpeg,bmp,png and for max size max:10000
       // doing the validation, passing post data, rules and the messages
       $validator = Validator::make($file, $rules);
       if ($validator->fails()) {
@@ -109,7 +118,7 @@ class MainController extends Controller
             $search = '%'.Input::get('search').'%';
 
             $pages      = DB::table('users')
-                            ->select('users.name')
+                            ->select('users.name', 'users.user_image')
                             ->where('name', 'LIKE', $search);
 
             // $blogitems  = DB::table('confessions')
@@ -120,8 +129,12 @@ class MainController extends Controller
 
             $results = $pages->get();
 
+            // return view('pages.sresult', compact($search));
+            return view('pages.sresult')->with('results', $results, $search);
+    }
 
-            return view('pages.sresult')->with('results', $results);
+    public function friend(){
+      return view('pages.friend');
     }
 
         public function getIndex()
@@ -153,24 +166,24 @@ class MainController extends Controller
       }
 
       public function updatepass() {
-          // $hasher = Sentinel::getHasher();
+
           $use = \Auth::user()->id;
-          // $user = \App\User::where('id','=',$use)->get();
           $oldPassword = Input::get('old_password');
           $password = Input::get('password');
           $passwordConf = Input::get('password_confirmation');
           $crypt = Hash::make($passwordConf);
 
-          // $user = Sentinel::getUser();
+          if($password!=$passwordConf){
+            \Session::flash('error_message', 'Passwords didnt match!');
+            return redirect('settings');
+          }
+          else{
+            \App\User::where('id', $use)->update(array('password'=>$crypt));
+           \Session::flash('flash_message', 'You have successfully updated your password!');
+            return redirect('settings');
+          }
 
-          // if (!$hasher->check($oldPassword, $user->password) || $password != $passwordConf) {
-          //     Session::flash('error', 'Check input is correct.');
-          //     // return view('passwords/reset');
-          // }
-
-        \App\User::where('id', $use)->update(array('password'=>$crypt));
-         \Session::flash('flash_message', 'You have successfully updated your password!');
-          return redirect('settings');
+        
       }
 
 }

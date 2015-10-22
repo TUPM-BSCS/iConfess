@@ -41,15 +41,17 @@
 					<form method="POST" action="{{ url('/settings/upload') }}" enctype="multipart/form-data" file="true">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						@foreach($user as $posts)
-						<img src="{{ asset($posts->user_image) }}" alt="D.P." height="250px" width="200px">
+						
 						<div class="form-group">
                             <label class="col-md-4 control-label">Change Profile Picture</label>
-                            <div class="col-md-6">
-                                <input type="file" name="user_image">
+                            <img src="{{ asset($posts->user_image) }}" alt="D.P." width="200px">
+                            <div class="col-md-12">
+                                <center><input type="file" name="user_image"></center>
                             </div>
+                            	<center><button type="submit" class="btn btn-primary btn-sm">Submit</button></center>
                         </div>  
                         @endforeach
-                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                        
 					</form>
 				</div>
 
@@ -106,7 +108,7 @@
 								</td>
 								<td style="color: gray; text-align: center;" width="75%">
 									<!-- insert retrieve name here-->
-									You update your account last: {{ $me->created_at }}
+									You updated your account last: {{ $me->created_at }}
 									@endforeach
 								</td>
 								<td class="settings-editbtn-pw">
@@ -127,7 +129,7 @@
 										Old Password:
 									</th>
 									<th>
-										<input type="text" name="old_password">
+										<input type="password" name="old_password" required />
 									</th>
 								</thead>
 								<thead>
@@ -135,7 +137,7 @@
 										New Password:
 									</th>
 									<th>
-										<input type="text" name="password">
+										<input type="password" name="password" required />
 									</th>
 								</thead>
 								<thead>
@@ -143,7 +145,7 @@
 										Confirm New Password:
 									</th>
 									<th>
-										<input type="text" name="password_confirmation">
+										<input type="password" name="password_confirmation" required />
 									</th>
 								</thead>
 							</table>

@@ -39,6 +39,7 @@
  // Route::get('home', 'MainController@counter');
  Route::post('results', 'MainController@postSearch');
  Route::get('search', 'MainController@getIndex');
+ Route::get('friend', 'MainController@friend');
  Route::post('search/addFriend', 'MainController@getAddFriend');
  Route::post('search/removeFriend', 'MainController@getRemoveFriend');
  Route::get('confess', 'MainController@confess');

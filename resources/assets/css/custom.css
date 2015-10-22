@@ -307,7 +307,7 @@ font-weight: 700;
 }
 .navbar-cls-top .navbar-brand:hover {
 
-background: #C90000;
+background: #818181;
 color:#fff;
 
 }
@@ -317,11 +317,11 @@ border:0px solid black;
      
 }
 .navbar-header {
-    background: #000;
+    background: #4b4b4b;
     padding:0px;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-background-color: #B40101;
+background-color: #818181;
 }
 .navbar-default .navbar-toggle {
 border-color: #fff;
@@ -521,6 +521,12 @@ line-height: 1.428571429;
     height: 93%;
 }
 
+li a:hover
+{
+    color: black;
+}
+
+
 li{
     margin: 5px 0px 5px 2px;
 }
@@ -556,7 +562,7 @@ ul{
     margin: 0% 1% 0% 5%;
     color: #7c7c7c;
     padding: 0px;
-    font-size: 1.05vw;
+    font-size: 100%;
 }
 
 
@@ -719,11 +725,12 @@ ul{
 }
 /* Settings css end */
 
+
 .btn-primary
 {
-    border: 1px #5F9EA0 solid;
+    border: 1px #797979 solid;
     border-radius: 5px;
-    background-color: #5F9EA0;
+    background-color: #797979;
     color: white;
     height: 10%;
 }
@@ -731,8 +738,16 @@ ul{
 
 .btn-primary:hover
 {
-    border: 1px #5F9EA0 solid;
+    border: 1px #797979 solid;
     background-color: white;
-    color: #5F9EA0;
+    color: #797979;
+    transition: all 0.3s;
+}
+
+.btn-primary:active
+{
+    border: 1px #797979 solid;
+    background-color: white;
+    color: #797979;
     transition: all 0.3s;
 }
