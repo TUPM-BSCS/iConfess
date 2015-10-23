@@ -50,10 +50,17 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'something' => 'required',
             'name' => 'required|max:255|unique:users',
-            // 'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
+
+        // 'email' => 'required|email|max:255|unique:users',
+    }
+
+     public function loginUsername()
+    {
+        return property_exists($this, 'username') ? $this->username : 'name';
     }
 
     /**
