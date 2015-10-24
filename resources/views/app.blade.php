@@ -4,14 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>iConfess</title>
+        <link rel="icon" type="image/png" href="http://home/iconfesacct2015/iConfess/resources/assets/image/icon.png" />
 
-	  <link rel="stylesheet" href="{{ URL::asset('/resources/assets/css/bootstrap2.css') }}"/>
+	  <link rel="stylesheet" href="{{ URL::asset('http://home/iconfesacct2015/iConfess/resources/assets/css/bootstrap2.css') }}"/>
          <!-- FONTAWESOME STYLES-->
-         <link rel="stylesheet" href="{{ URL::asset('/resources/assets/css/font-awesome.css') }}"/>
-         <link rel="stylesheet" href="{{ URL::asset('/resources/assets/font-awesome/css/font-awesome.min.css') }}"/>
+         <link rel="stylesheet" href="{{ URL::asset('http://home/iconfesacct2015/iConfess/resources/assets/css/font-awesome.css') }}"/>
+         <link rel="stylesheet" href="{{ URL::asset('http://home/iconfesacct2015/iConfess/resources/assets/css/font-awesome.min.css') }}"/>
             <!-- CUSTOM STYLES-->
-        <link rel="stylesheet" href="{{ URL::asset('/resources/assets/css/custom.css') }}"/>
-        <link rel="stylesheet" href="{{ URL::asset('/resources/assets/css/custom-made.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::asset('http://home/iconfesacct2015/iConfess/resources/assets/css/custom.css') }}"/>
+        <link rel="stylesheet" href="{{ URL::asset('http://home/iconfesacct2015/iConfess/resources/assets/css/custom-made.css') }}"/>
         <!-- Custom Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -39,7 +40,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a href="{{ url('/') }}">
-					<img class="imgs" src="{{ URL::asset('/resources/assets/image/icon.png') }}" height="40px" weight="50px" style="margin-top: 5px;">
+					<img class="imgs" src="{{ URL::asset('iConfess/resources/assets/image/icon.png') }}" height="40px" weight="50px" style="margin-top: 5px;">
 				</a>
 			</div>
 		</div> 
@@ -66,7 +67,7 @@
         	<span class="icon-bar"></span>
       	</button>
       	<a href="{{ url('/') }}">
-			<img class="imgs" src="{{ URL::asset('/resources/assets/image/icon.png') }}" height="40px" weight="50px" style="margin-top: 5px;">
+			<img class="imgs" src="{{ URL::asset('iConfess/resources/assets/image/icon.png') }}" height="40px" weight="50px" style="margin-top: 5px;">
 		</a>
     </div>
 
