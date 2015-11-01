@@ -5,7 +5,7 @@
 
 
 <head>
-	<script src="{{ URL::asset('http://localhost/iConfess/resources/assets/js/jquery.js') }}"/></script>
+	<script src="{{ URL::asset('jquery.js') }}"/></script>
 	<script>
 		$(document).ready(function(){
 		    $(".confessiondetails").click(function(){
